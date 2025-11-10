@@ -25,45 +25,42 @@ A simple and responsive MERN stack (MongoDB, Express.js, React, Node.js) applica
 
 ## Getting Started
 
-### Prerequisites
+🐳 Docker Setup (Recommended)
 
--   Node.js (v18+)
--   npm
--   MongoDB (local instance or a free [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) cluster)
+This app is fully containerized using Docker Compose, allowing you to run the frontend, backend, and MongoDB together with a single command.
 
-### Backend Setup
+🧾 Prerequisites
 
-1.  **Navigate to the backend directory**
-    ```bash
-    cd backend
-    ```
-2.  **Install dependencies**
-    ```bash
-    npm install
-    ```
-3.  **Create a `.env` file** in the `backend` directory and add your MongoDB connection string:
-    ```env
-    PORT=5000
-    MONGO_URI=your_mongodb_connection_string
-    ```
-4.  **Start the server** (with auto-restarting on file changes):
-    ```bash
-    npm run dev
-    ```
-    The backend will be running at `http://localhost:5000`.
+- Docker Desktop
+ installed and running
 
-### Frontend Setup
+- (Optional) .env file for backend configuration
 
-1.  **Navigate to the frontend directory** (in a new terminal):
-    ```bash
-    cd frontend
-    ```
-2.  **Install dependencies**
-    ```bash
-    npm install
-    ```
-3.  **Start the development server**:
-    ```bash
-    npm run dev
-    ```
-    The React app will open at `http://localhost:5173` (or the next available port).
+
+## ⚙️ How to Run Using Docker
+
+1. Clone the repository
+
+- git clone https://github.com/Ashwin0422/Contact-Book.git
+- cd react-contacts-project
+
+
+2. Build and start all services
+
+- docker-compose up --build
+
+This will:
+
+- Start the backend server (Node + Express)
+- Start the frontend (React)
+- Start MongoDB inside a container
+
+3. Access the application
+
+- Frontend → http://localhost:3000
+- Backend API → http://localhost:5000
+- MongoDB → running in a container named mongodb
+
+4. Stop the containers
+
+- docker-compose down

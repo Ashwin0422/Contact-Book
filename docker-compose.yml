@@ -1,0 +1,24 @@
+services:
+  backend:
+    build: ./backend
+    container_name: server
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./backend/.env
+    networks:
+      - mern-networks
+    
+  frontend:
+    build: ./frontend
+    container_name: client
+    ports:
+      - "3000:80"
+    networks:
+      - mern-networks
+    depends_on:
+      - backend
+
+networks:
+  mern-networks:
+    driver: bridge
